@@ -17,7 +17,7 @@ app.resizable(False, False)
 icon_path = resource_path("login.ico")
 app.iconbitmap(default=icon_path)
 
-exitcode = login()
+exitcode = str(login())
 
 frame = ctk.CTkFrame(app, corner_radius=20)
 frame.pack(padx=20, pady=(20, 20), fill="both", expand=True)
@@ -37,13 +37,24 @@ ctk.CTkLabel(
 status_box = ctk.CTkFrame(frame, corner_radius=12, fg_color="#202225")
 status_box.pack(pady=10, padx=30, fill="x")
 
-color = "green" if exitcode == 1 else "red" if exitcode == -1 else "orange"
-text = "Connected successfully!" if exitcode == 1 else "Login failed!" if exitcode == -1 else "Already connected!"
+text = {
+    '1': 'Connected successfully!',
+    '0': 'Already connected!',
+    '-1': 'Login failed!',
+    '-2': 'Network disabled!'
+
+}
+color = {
+    '1': 'green',
+    '0': 'orange',
+    '-1': 'red',
+    '-2': 'grey'
+}
 
 ctk.CTkLabel(
-    status_box, text=text,
+    status_box, text=text[exitcode],
     font=("Consolas", 16, 'bold'),
-    text_color=color
+    text_color=color[exitcode]
 ).pack(pady=10)
 
 ctk.CTkLabel(

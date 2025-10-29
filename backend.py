@@ -1,4 +1,5 @@
 import requests
+from requests.exceptions import ConnectionError
 from dotenv import load_dotenv
 import re
 import os
@@ -7,16 +8,19 @@ load_dotenv()
 
 def login(url_check="http://connectivitycheck.gstatic.com/generate_204"):
     url = None
-    response = requests.get(url_check, allow_redirects=True)
-    if response.status_code == 200:
-        match = re.search(r'window.location="(.*?)"', response.text)
-        if match:
-            url = match.group(1)
-            magic_match = re.search(r'fgtauth\?(.*?)$', url)
-            if magic_match:
-                magic = magic_match.group(1)
-        else:
-            url = None
+    try:
+        response = requests.get(url_check, allow_redirects=True)
+        if response.status_code == 200:
+            match = re.search(r'window.location="(.*?)"', response.text)
+            if match:
+                url = match.group(1)
+                magic_match = re.search(r'fgtauth\?(.*?)$', url)
+                if magic_match:
+                    magic = magic_match.group(1)
+            else:
+                url = None
+    except ConnectionError:
+        return -2
 
     if url is None:
         return 0
