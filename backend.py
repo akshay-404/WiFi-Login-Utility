@@ -35,7 +35,7 @@ def login(url_check="http://connectivitycheck.gstatic.com/generate_204"):
                 logging.info(f"Response: {response.text}")
                 return -3
         else:
-            logging.info("Already connected and autheticated to the network.")
+            logging.info("Already connected and authenticated to the network.")
             return 0
 
         headers = {

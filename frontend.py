@@ -7,8 +7,6 @@ def resource_path(relative_path):
     base_path = getattr(sys, "_MEIPASS", os.path.abspath("."))
     return os.path.join(base_path, relative_path)
 
-print(resource_path(r"static\login.ico"))
-
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
