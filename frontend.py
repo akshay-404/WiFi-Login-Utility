@@ -6,12 +6,12 @@ import os
 def resource_path(relative_path):
     base_path = getattr(sys, "_MEIPASS", os.path.abspath("."))
     return os.path.join(base_path, relative_path)
-    
+
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
 app = ctk.CTk()
-app.title("LoginLink - WiFi Auto Authenticator")
+app.title("WiFi-Login-Utility")
 app.geometry("460x260")
 app.resizable(False, False)
 icon_path = resource_path("login.ico")
@@ -41,9 +41,9 @@ text = {
     '1': 'Connected successfully!',
     '0': 'Already connected!',
     '-1': 'Login failed!',
-    '-2': 'Network disabled!'
-
+    '-2': 'Network disabled!'\
 }
+
 color = {
     '1': 'green',
     '0': 'orange',
