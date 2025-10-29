@@ -19,7 +19,6 @@ env/
 
 # Builds
 build/
-dist/
 *.build/
 *.dist/
 *.spec
