@@ -7,6 +7,8 @@ def resource_path(relative_path):
     base_path = getattr(sys, "_MEIPASS", os.path.abspath("."))
     return os.path.join(base_path, relative_path)
 
+print(resource_path(r"login.ico"))
+
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
@@ -38,17 +40,21 @@ status_box = ctk.CTkFrame(frame, corner_radius=12, fg_color="#202225")
 status_box.pack(pady=10, padx=30, fill="x")
 
 text = {
-    '1': 'Connected successfully!',
-    '0': 'Already connected!',
-    '-1': 'Login failed!',
-    '-2': 'Network disabled!'\
+    '1': 'Connected Successfully!',
+    '0': 'Already Connected!',
+    '-1': 'WiFi/Ethernet Not Available!',
+    '-2': 'Credential Failure!',
+    '-3': 'Login Failed! (URL fault)',
+    '-4': 'Login Failed! (Server fault)',
 }
 
 color = {
     '1': 'green',
     '0': 'orange',
-    '-1': 'red',
-    '-2': 'grey'
+    '-1': 'grey',
+    '-2': 'red',
+    '-3': 'red',
+    '-4': 'red'
 }
 
 ctk.CTkLabel(

@@ -16,3 +16,10 @@ __pycache__/
 venv/
 env/
 .env
+
+# Builds
+build/
+dist/
+*.build/
+*.dist/
+*.spec
