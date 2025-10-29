@@ -7,7 +7,7 @@ def resource_path(relative_path):
     base_path = getattr(sys, "_MEIPASS", os.path.abspath("."))
     return os.path.join(base_path, relative_path)
 
-print(resource_path(r"login.ico"))
+print(resource_path(r"static\login.ico"))
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -16,7 +16,7 @@ app = ctk.CTk()
 app.title("WiFi-Login-Utility")
 app.geometry("460x260")
 app.resizable(False, False)
-icon_path = resource_path("login.ico")
+icon_path = resource_path(r"static\login.ico")
 app.iconbitmap(default=icon_path)
 
 exitcode = str(login())
