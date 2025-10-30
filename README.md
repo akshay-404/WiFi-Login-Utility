@@ -88,9 +88,9 @@ You can either **use the precompiled version** or **build your own executable**.
 
 Download the latest release from the [Releases](../../releases) page and setup the `.env`:
 
-[```wifi-login-utility.exe```](https://github.com/akshay-404/WiFi-Login-Utility/releases/download/v1.0.0/wifi-login-utility.exe) Create the `.env` manually as on `.env.example` and run the executable.
+[```wifi-login-utility.exe```](https://github.com/akshay-404/WiFi-Login-Utility/releases/download/v1.0.1/wifi-login-utility.exe) Create the `.env` manually as on `.env.example` and run the executable.
 
-[```wifi-login-utility.zip```](https://github.com/akshay-404/WiFi-Login-Utility/releases/download/v1.0.0/wifi-login-utility.zip) Extract the `.zip` file, edit the `.env` file and run the executable.
+[```wifi-login-utility.zip```](https://github.com/akshay-404/WiFi-Login-Utility/releases/download/v1.0.1/wifi-login-utility.zip) Extract the `.zip` file, edit the `.env` file and run the executable.
 
 
 That’s it — the tool will connect and log in automatically when you’re on the campus Wi-Fi.
