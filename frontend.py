@@ -44,6 +44,7 @@ text = {
     '-2': 'Credential Failure!',
     '-3': 'Login Failed! (URL fault)',
     '-4': 'Login Failed! (Server fault)',
+    '-5': 'Login Falied! (Unknown error)'
 }
 
 color = {
@@ -52,7 +53,8 @@ color = {
     '-1': 'grey',
     '-2': 'red',
     '-3': 'red',
-    '-4': 'red'
+    '-4': 'red',
+    '-5': 'red'
 }
 
 ctk.CTkLabel(

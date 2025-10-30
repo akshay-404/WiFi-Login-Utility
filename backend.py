@@ -1,5 +1,4 @@
 import requests
-from requests.exceptions import ConnectionError
 from dotenv import dotenv_values
 import logging
 import re
@@ -55,6 +54,7 @@ def login(url_check="http://connectivitycheck.gstatic.com/generate_204"):
         }
         
         session = requests.Session()
+        response = session.get(url, headers=headers)
         response = session.post(url, data=logindata, headers=headers)
 
         if "keepalive" in response.text:
@@ -64,9 +64,13 @@ def login(url_check="http://connectivitycheck.gstatic.com/generate_204"):
             logging.error("Login failed due to server-side fault. Please check the browser portal for more info.")
             return -4
         
-    except ConnectionError:
+    except requests.exceptions.ConnectionError as e:
         logging.error("No wifi/ethernet connection available.")
         return -1
+    
+    except Exception as e:
+        logging.error(e)
+        return -5
         
 if __name__ == "__main__":
     print(login())
