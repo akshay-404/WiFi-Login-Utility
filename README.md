@@ -19,11 +19,13 @@ This tool saves your login credentials securely in a local `.env` file and handl
 
 ```
 WiFi-Login-Utility/
+├── static
+|   └── login.ico
 ├── .env
 ├── backend.py
 ├── frontend.py
-├── login.ico
-├── error.log
+├── requirements.txt
+└── error.log
 ```
 
 - `.env` – Stores your credentials and configuration  
@@ -41,9 +43,19 @@ WiFi-Login-Utility/
 ```bash
 git clone https://github.com/akshay-404/WiFi-Login-Utility.git
 cd WiFi-Login-Utility
+
+```
+### 2. Create and Activate a Virtual Environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate            # Linux/macOS
+# OR
+.venv\Scripts\activate               # Windows
+pip install -r requirements.txt      # Install dependencies
 ```
 
-### 2. Create and configure `.env`
+### 3. Create and configure `.env`
 
 Copy the example environment file:
 
@@ -60,6 +72,12 @@ PASSWORD=your_password
 
 > ⚠️ Keep this file private — it contains your login credentials.
 
+### 4. Run the application
+
+```bash
+python frontend.py
+```
+
 ---
 
 ## 🧱 Build Options
@@ -68,11 +86,12 @@ You can either **use the precompiled version** or **build your own executable**.
 
 ### ▶️ Option 1: Use precompiled `.exe`
 
-Download the latest release from the [Releases](../../releases) page, extract it, and run the executable:
+Download the latest release from the [Releases](../../releases) page and setup the `.env`:
 
-```
-WiFi-Login-Utility.exe
-```
+[```wifi-login-utility.exe```](https://github.com/akshay-404/WiFi-Login-Utility/releases/download/v1.0.0/wifi-login-utility.exe) Create the `.env` manually as on `.env.example` and run the executable.
+
+[```wifi-login-utility.zip```](https://github.com/akshay-404/WiFi-Login-Utility/releases/download/v1.0.0/wifi-login-utility.zip) Extract the `.zip` file, edit the `.env` file and run the executable.
+
 
 That’s it — the tool will connect and log in automatically when you’re on the campus Wi-Fi.
 
